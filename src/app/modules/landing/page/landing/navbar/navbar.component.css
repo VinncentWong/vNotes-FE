@@ -1,15 +1,33 @@
 .background-navbar{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 250em;
+  height: 3em;
   background-color: rgb(0, 0, 0);
-  color: white;
+  color: white !important;
   font-size: 1.5em;
 }
 
 #about-article{
   position: absolute;
-  left: 8em;
+  left: 10em;
   top: 0.8em;
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  gap: 3em;
 }
 
+#logo{
+  position: absolute;
+  height: 5em;
+  width: 10em;
+  left: 2.5em;
+  top: 0.9em;
+}
+
+#login{
+  position: absolute;
+  left: 50em;
+  top: 0.7em;
+}

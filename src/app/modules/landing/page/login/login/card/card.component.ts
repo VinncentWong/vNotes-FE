@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'card',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  formGroup: FormGroup;
+  constructor() {
+    this.formGroup = new FormGroup({
+      email: new FormControl("", {
+        validators: [
+          Validators.required, Validators.email
+        ]
+      })
+    });
+  }
 
   ngOnInit(): void {
+
+  }
+
+  emailValidation(): boolean{
+    console.log("email validation terpanggil");
+    if(this.formGroup.controls["email"].invalid){
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }

@@ -4,7 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './login/card/card.component';
 import { LandingModule } from '../landing/landing.module';
-
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -13,7 +14,9 @@ import { LandingModule } from '../landing/landing.module';
   imports: [
     CommonModule,
     RouterModule,
-    LandingModule
+    LandingModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent

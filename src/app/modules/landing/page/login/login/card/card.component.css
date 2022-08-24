@@ -1,3 +1,10 @@
 #login-card{
   background-color: #202020;
 }
+
+.input-login{
+  position: absolute;
+  top: 20em;
+  left: 40em;
+  left: 10em;
+}

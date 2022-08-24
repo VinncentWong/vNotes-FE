@@ -1,10 +1,30 @@
 #login-card{
-  background-color: #202020;
+  position: absolute;
+  width: 55em;
+  height: 35em;
+  background: #202020;
+  top: 10em;
+  left: 20em;
 }
 
 .input-login{
   position: absolute;
-  top: 20em;
-  left: 40em;
-  left: 10em;
+  top: 5em;
+  left: 5em;
+}
+
+#login-text{
+  position: absolute;
+  color: white;
+  font-weight: bolder;
+  font-size: 2em;
+  left: 12em;
+  top: 1em;
+}
+
+#input-email{
+  position: absolute;
+  width: 45em;
+  height: 10em;
+  top: 2.5em;
 }

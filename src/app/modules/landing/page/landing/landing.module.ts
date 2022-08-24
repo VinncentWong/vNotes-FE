@@ -5,7 +5,6 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [

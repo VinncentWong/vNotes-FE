@@ -1,14 +1,23 @@
-<div class="background-navbar">
-  <div id = "logo">
-    <a href="www.google.com">
-      <img alt="logo">
-    </a>
+<div [ngSwitch]="this.navbarStatus">
+  <div *ngSwitchCase="'landing'">
+    <div class="background-navbar">
+      <div id = "logo">
+        <a href="www.google.com">
+          <img alt="logo">
+        </a>
+      </div>
+      <div id = "about-article">
+        <a href="www.google.com">About</a>
+        <a href="www.google.com">Article</a>
+      </div>
+      <div id = "login">
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
   </div>
-  <div id = "about-article">
-    <a href="www.google.com">About</a>
-    <a href="www.google.com">Article</a>
-  </div>
-  <div id = "login">
-    <a routerLink="/login">Login</a>
+  <div *ngSwitchCase="'login'">
+    <div class="background-navbar">
+      <a>Back</a>
+    </div>
   </div>
 </div>

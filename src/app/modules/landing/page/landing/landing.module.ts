@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LandingComponent } from './landing.component';
+import { LandingcardComponent } from './landingcard/landingcard.component';
+import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './page/landing/navbar/navbar.component';
-import { LandingComponent } from './page/landing/landing.component';
-import { LandingcardComponent } from './page/landing/landingcard/landingcard.component';
-import { MatCardModule } from '@angular/material/card';
-import { FooterComponent } from './page/landing/footer/footer.component';
+import {MatCardModule} from '@angular/material/card';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -14,12 +16,14 @@ import { FooterComponent } from './page/landing/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent,
     LandingComponent,
-    LandingcardComponent
+    LandingcardComponent,
+    FooterComponent
   ]
 })
 export class LandingModule { }

@@ -1,6 +1,7 @@
 #landing-card{
   position: absolute;
-  left: 45em;
-  top: 20em;
+  left: 36em;
+  top: 15em;
   background-color: antiquewhite;
+  width: 25em;
 }

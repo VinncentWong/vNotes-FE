@@ -1,0 +1,8 @@
+#footer{
+  position: absolute;
+  top: 50em;
+  background-color: #202020;
+  color: white;
+  width: 450em;
+  height: 15em;
+}

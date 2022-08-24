@@ -4,5 +4,30 @@
   background-color: #202020;
   color: white;
   width: 450em;
-  height: 15em;
+  height: 17em;
+}
+
+#contact-logo{
+  position: absolute;
+  top: 8em;
+  left: 40em;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+#contact-text{
+  position: absolute;
+  left: 20.5em;
+  font-size: 2em;
+  top: 2em;
+  font-weight: bolder;
+}
+
+#end-text{
+  position: absolute;
+  top: 12.5em;
+  left: 56em;
+  font-size: 1.2em;
+  font-weight: bolder;
 }

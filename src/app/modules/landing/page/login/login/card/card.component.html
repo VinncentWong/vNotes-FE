@@ -9,8 +9,12 @@
           Email tidak valid
         </mat-error>
       </mat-form-field>
-      <mat-form-field appearance="fill" [color]="">
-
+      <mat-form-field id = "input-password" appearance="fill" [color]="this.passwordColor">
+        <mat-label>Input your password</mat-label>
+        <input matInput name="password" type="password" formControlName="password">
+        <mat-error *ngIf="!passwordValidation()">
+          Masukkan password Anda!
+        </mat-error>
       </mat-form-field>
     </form>
   </div>

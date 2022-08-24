@@ -22,7 +22,7 @@ export class CardComponent implements OnInit {
       }),
       password: new FormControl("", {
         validators: [
-          Validators.required, Validators.minLength(3)
+          Validators.required
         ],
         updateOn: "change"
       })
@@ -44,7 +44,7 @@ export class CardComponent implements OnInit {
   }
 
   passwordValidation(): boolean{
-    if(this.formGroup.controls["password"].invalid){
+    if(this.formGroup.controls["password"].pristine){
       this.passwordColor = "warn";
       return false;
     } else {

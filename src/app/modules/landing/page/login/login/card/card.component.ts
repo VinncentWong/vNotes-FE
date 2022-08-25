@@ -9,8 +9,8 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 export class CardComponent implements OnInit {
 
   formGroup: FormGroup;
-  emailColor: string = "primary";
-  passwordColor: string = "primary";
+  emailColor?: string;
+  passwordColor?: string;
 
   constructor() {
     this.formGroup = new FormGroup({
@@ -29,26 +29,36 @@ export class CardComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("on init terpanggil");
+  }
 
-  emailValidation(): boolean{
+  emailValidation(){
     console.log("email validation terpanggil");
     console.log(`email tidak valid = ${this.formGroup.controls["email"].invalid}`);
     if(this.formGroup.controls["email"].invalid){
       this.emailColor = "warn";
       return false;
+    } else if(this.formGroup.controls["email"].pristine){
+      this.passwordColor = "primary";
+      return true;
     } else {
       this.emailColor = "accent";
       return true;
     }
-  }
+}
 
   passwordValidation(): boolean{
-    if(this.formGroup.controls["password"].pristine){
+    console.log("password validaiton terpanggil");
+    if(this.formGroup.controls["password"].invalid){
       this.passwordColor = "warn";
       return false;
+    } else if(this.formGroup.controls["password"].pristine){
+      this.passwordColor = "primary";
+      return true;
     } else {
-      this.emailColor = "accent";
+      console.log("password valid");
+      this.passwordColor = "accent";
       return true;
     }
   }

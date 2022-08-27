@@ -1,0 +1,46 @@
+#register-card{
+  position: absolute;
+  background-color: #202020;
+  width: 55em;
+  left: 20em;
+  height: 35em;
+  top: 10em;
+  font-size: 1em;
+}
+
+#register-text{
+  position: absolute;
+  color: white;
+  font-size: 2em;
+  font-weight: bolder;
+  left: 11em;
+  top: 1em;
+}
+
+#input-username{
+  position: absolute;
+  top: 7em;
+  left: 5em;
+  width: 40em;
+}
+
+#input-email{
+  position: absolute;
+  top: 13em;
+  left: 5em;
+  width: 40em;
+}
+
+#input-password{
+  position: absolute;
+  top: 20em;
+  left: 5em;
+  width: 40em;
+}
+
+#submit-button{
+  position: absolute;
+  top: 28em;
+  left: 40em;
+  color: white;
+}

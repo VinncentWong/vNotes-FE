@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingModule } from './modules/landing/page/landing/landing.module';
 import { LoginModule } from './modules/landing/page/login/login.module';
+import { RegisterModule } from './modules/landing/page/register/register.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginModule } from './modules/landing/page/login/login.module';
     AppRoutingModule,
     NoopAnimationsModule,
     LandingModule,
-    LoginModule
+    LoginModule,
+    RegisterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

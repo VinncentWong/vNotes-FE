@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'card',
@@ -12,7 +14,7 @@ export class CardComponent implements OnInit {
   emailColor: string = "accent";
   passwordColor: string = "accent";
 
-  constructor() {
+  constructor(private icon: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -27,6 +29,7 @@ export class CardComponent implements OnInit {
         updateOn: "change"
       })
     });
+    icon.addSvgIcon("google", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../../../../assets/google-svgrepo-com.svg"));
   }
 
   ngOnInit(): void {}
@@ -40,7 +43,7 @@ export class CardComponent implements OnInit {
   }
 
   passwordValidation(): boolean{
-    if(this.formGroup.controls["email"].invalid){
+    if(this.formGroup.controls["password"].invalid){
       return false;
      } else {
       return true;

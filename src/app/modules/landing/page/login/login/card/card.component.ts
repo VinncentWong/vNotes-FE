@@ -9,8 +9,8 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 export class CardComponent implements OnInit {
 
   formGroup: FormGroup;
-  emailColor?: string;
-  passwordColor?: string;
+  emailColor: string = "accent";
+  passwordColor: string = "accent";
 
   constructor() {
     this.formGroup = new FormGroup({
@@ -29,37 +29,21 @@ export class CardComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log("on init terpanggil");
+  ngOnInit(): void {}
+
+  emailValidation(): boolean{
+   if(this.formGroup.controls["email"].invalid){
+    return false;
+   } else {
+    return true;
+   }
   }
 
-  emailValidation(){
-    console.log("email validation terpanggil");
-    console.log(`email tidak valid = ${this.formGroup.controls["email"].invalid}`);
-    if(this.formGroup.controls["email"].invalid){
-      this.emailColor = "warn";
-      return false;
-    } else if(this.formGroup.controls["email"].pristine){
-      this.passwordColor = "primary";
-      return true;
-    } else {
-      this.emailColor = "accent";
-      return true;
-    }
-}
-
   passwordValidation(): boolean{
-    console.log("password validaiton terpanggil");
-    if(this.formGroup.controls["password"].invalid){
-      this.passwordColor = "warn";
+    if(this.formGroup.controls["email"].invalid){
       return false;
-    } else if(this.formGroup.controls["password"].pristine){
-      this.passwordColor = "primary";
+     } else {
       return true;
-    } else {
-      console.log("password valid");
-      this.passwordColor = "accent";
-      return true;
-    }
+     }
   }
 }

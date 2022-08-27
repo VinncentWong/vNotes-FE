@@ -9,7 +9,7 @@ import { LoginModule } from './modules/landing/page/login/login.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

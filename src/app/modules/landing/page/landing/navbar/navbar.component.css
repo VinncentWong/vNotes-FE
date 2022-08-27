@@ -37,3 +37,12 @@
   top: 1em;
   left: 1.3em;
 }
+
+
+#register-text{
+  position: absolute;
+  color: white;
+  font-size: 1em;
+  top: 1em;
+  left: 58em;
+}

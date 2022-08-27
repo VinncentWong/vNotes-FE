@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-notfound',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotfoundComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private icon: MatIconRegistry, private domSanitizer: DomSanitizer) {
+    this.icon.addSvgIcon("404",
+    this.
+    domSanitizer.
+    bypassSecurityTrustResourceUrl("../../../../assets/notfound.svg"));
   }
+
+  ngOnInit(): void {}
 
 }

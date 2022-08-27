@@ -1,0 +1,14 @@
+#not-found{
+  position: absolute;
+  width: 30em;
+  height: 30em;
+  left: 30em;
+}
+
+#text-notfound{
+  position: absolute;
+  font-size: 5em;
+  font-weight: bold;
+  top: 7em;
+  left: 4.5em;
+}

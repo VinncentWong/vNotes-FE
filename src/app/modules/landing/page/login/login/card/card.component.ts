@@ -49,4 +49,12 @@ export class CardComponent implements OnInit {
       return true;
      }
   }
+
+  disableButton(): boolean{
+    if(this.formGroup.invalid){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

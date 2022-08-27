@@ -16,9 +16,15 @@
           Masukkan password Anda!
         </mat-error>
       </mat-form-field>
-      <button id = "google-button">
-        <mat-icon svgIcon="google"></mat-icon>
-      </button>
+    <div id = "container-google">
+      <mat-icon id = "google-icon" svgIcon="google"></mat-icon>
+      <a id = "login-w-google-anchor" href="https://www.google.com">
+        <p>Login with Google</p>
+      </a>
+    </div>
+    <button mat-stroked-button id = "button-submit" [disabled]="disableButton()">
+      <p style="color: white;">Submit</p>
+    </button>
     </form>
   </div>
 </div>

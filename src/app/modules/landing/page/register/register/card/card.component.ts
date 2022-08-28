@@ -68,10 +68,11 @@ export class CardComponent implements OnInit {
 
   onSubmit(): void{
     console.log("login terpanggil");
-    this.http.post<User>("http://localhost:8080/user/login", {
+    this.http.post<User>("http://localhost:8080/user/registration", {
       email: this.formGroup.controls["email"].value,
       password: this.formGroup.controls["password"].value,
-    }).subscribe(() => alert("sukses login!"));
+      username: this.formGroup.controls["username"].value
+    }).subscribe(() => alert("sukses registrasi!"));
     this.formGroup.reset;
   }
 }

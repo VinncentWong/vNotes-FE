@@ -2,7 +2,7 @@
   <div id = "register-text">
     <p>Register</p>
   </div>
-  <form [formGroup]="this.formGroup">
+  <form [formGroup]="this.formGroup" (ngSubmit)="onSubmit()">
     <mat-form-field id = "input-username" color="accent" appearance="outline">
       <mat-label>Please input your Username</mat-label>
       <input matInput formControlName="username">

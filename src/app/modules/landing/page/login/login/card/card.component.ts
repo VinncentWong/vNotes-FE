@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { User } from 'src/app/data/user';
 
 @Component({
   selector: 'card',
@@ -13,8 +15,9 @@ export class CardComponent implements OnInit {
   formGroup: FormGroup;
   emailColor: string = "accent";
   passwordColor: string = "accent";
+  private httpClient: HttpClient;
 
-  constructor(private icon: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  constructor(private icon: MatIconRegistry, private domSanitizer: DomSanitizer, https: HttpClient) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -29,7 +32,8 @@ export class CardComponent implements OnInit {
         updateOn: "change"
       })
     });
-    icon.addSvgIcon("google", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../../../../assets/google-svgrepo-com.svg"));
+    this.httpClient = https;
+    this.icon.addSvgIcon("google", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../../../../assets/google-svgrepo-com.svg"));
   }
 
   ngOnInit(): void {}
@@ -56,5 +60,14 @@ export class CardComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  onSubmit(): void{
+    console.log("login terpanggil");
+    this.httpClient.post<User>("http://localhost:8080/user/login", {
+      email: this.formGroup.controls["email"].value,
+      password: this.formGroup.controls["password"].value,
+    }).subscribe(() => alert("sukses login!"));
+    this.formGroup.reset;
   }
 }

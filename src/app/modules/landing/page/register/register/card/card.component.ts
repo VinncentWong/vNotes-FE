@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { User } from 'src/app/data/user';
 
 @Component({
   selector: 'card',
@@ -10,7 +12,7 @@ export class CardComponent implements OnInit {
 
   formGroup: FormGroup
 
-  constructor() {
+  constructor(private readonly http: HttpClient) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -62,5 +64,14 @@ export class CardComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  onSubmit(): void{
+    console.log("login terpanggil");
+    this.http.post<User>("http://localhost:8080/user/login", {
+      email: this.formGroup.controls["email"].value,
+      password: this.formGroup.controls["password"].value,
+    }).subscribe(() => alert("sukses login!"));
+    this.formGroup.reset;
   }
 }

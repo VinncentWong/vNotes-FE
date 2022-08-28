@@ -22,7 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatIconModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [
     LoginComponent

@@ -1,7 +1,7 @@
 <div id = "login-card">
   <p id = "login-text">Login</p>
   <div class = "input-login">
-    <form [formGroup]="this.formGroup">
+    <form [formGroup]="this.formGroup" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline" [color]="this.emailColor" id = "input-email">
         <mat-label>Input your email</mat-label>
         <input matInput name="email" type="email" formControlName="email" placeholder="Example: aaaaaa@gmail.com">
@@ -22,7 +22,7 @@
         <p>Login with Google</p>
       </a>
     </div>
-    <button mat-stroked-button id = "button-submit" [disabled]="disableButton()">
+    <button type="submit" mat-stroked-button id = "button-submit" [disabled]="disableButton()">
       Submit
     </button>
     </form>

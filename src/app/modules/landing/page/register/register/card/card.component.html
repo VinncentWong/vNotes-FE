@@ -3,7 +3,7 @@
     <p>Register</p>
   </div>
   <form [formGroup]="this.formGroup">
-    <mat-form-field id = "input-username" color="accent" appearance="fill">
+    <mat-form-field id = "input-username" color="accent" appearance="outline">
       <mat-label>Please input your Username</mat-label>
       <input matInput formControlName="username">
       <mat-error *ngIf="this.usernameIsInvalid()">
@@ -11,7 +11,7 @@
       </mat-error>
       <mat-hint>Hint: aaaaaaaa[min 8 characters]</mat-hint>
     </mat-form-field>
-    <mat-form-field id = "input-email" color="accent" appearance="fill">
+    <mat-form-field id = "input-email" color="accent" appearance="outline">
       <mat-label>Please input your email</mat-label>
       <input matInput formControlName="email">
       <mat-error *ngIf="emailIsInvalid()">
@@ -19,7 +19,7 @@
       </mat-error>
       <mat-hint>Hint: aaaaaaaa@gmail.com</mat-hint>
     </mat-form-field>
-    <mat-form-field id = "input-password" color="accent" appearance="fill">
+    <mat-form-field id = "input-password" color="accent" appearance="outline">
       <mat-label>Please input your password</mat-label>
       <input type = "password" matInput formControlName="password">
       <mat-error *ngIf="passwordIsInvalid()">

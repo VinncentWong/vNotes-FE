@@ -2,14 +2,14 @@
   <p id = "login-text">Login</p>
   <div class = "input-login">
     <form [formGroup]="this.formGroup">
-      <mat-form-field appearance="fill" [color]="this.emailColor" id = "input-email">
+      <mat-form-field appearance="outline" [color]="this.emailColor" id = "input-email">
         <mat-label>Input your email</mat-label>
         <input matInput name="email" type="email" formControlName="email" placeholder="Example: aaaaaa@gmail.com">
         <mat-error *ngIf="!emailValidation()">
           Email tidak valid
         </mat-error>
       </mat-form-field>
-      <mat-form-field id = "input-password" appearance="fill" [color]="this.passwordColor">
+      <mat-form-field id = "input-password" appearance="outline" [color]="this.passwordColor">
         <mat-label>Input your password</mat-label>
         <input matInput name="password" type="password" formControlName="password">
         <mat-error *ngIf="!passwordValidation()">

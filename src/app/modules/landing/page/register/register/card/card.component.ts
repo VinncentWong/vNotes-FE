@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { User } from 'src/app/data/user';
 
 @Component({
@@ -43,7 +43,8 @@ export class CardComponent implements OnInit {
   }
 
   emailIsInvalid(): boolean{
-    if(this.formGroup.controls["email"].invalid){
+    const formControl: FormControl = this.formGroup.controls["email"] as FormControl;
+    if((formControl.hasError("email") || formControl.hasError("required")) && !formControl.pristine && !formControl.untouched ){
       return true;
     } else {
       return false;
@@ -51,7 +52,8 @@ export class CardComponent implements OnInit {
   }
 
   passwordIsInvalid(): boolean{
-    if(this.formGroup.controls["password"].invalid){
+    const formControl: FormControl = this.formGroup.controls["password"] as FormControl;
+    if((formControl.hasError("required") || formControl.hasError("minlength")) && !formControl.pristine && !formControl.untouched ){
       return true;
     } else {
       return false;
@@ -59,20 +61,26 @@ export class CardComponent implements OnInit {
   }
 
   usernameIsInvalid(): boolean{
-    if(this.formGroup.controls["username"].invalid){
+    const formControl: FormControl = this.formGroup.controls["username"] as FormControl;
+    if((formControl.hasError("required") || formControl.hasError("minlength")) && !formControl.pristine && !formControl.untouched){
       return true;
     } else {
       return false;
     }
   }
 
-  onSubmit(): void{
+  onSubmit(form: FormGroupDirective): void{
     console.log("login terpanggil");
-    this.http.post<User>("http://localhost:8080/user/registration", {
+    const callApi$ = this.http.post<User>("http://localhost:8080/user/registration", {
       email: this.formGroup.controls["email"].value,
       password: this.formGroup.controls["password"].value,
       username: this.formGroup.controls["username"].value
-    }).subscribe(() => alert("sukses registrasi!"));
-    this.formGroup.reset;
+    });
+    callApi$.subscribe((data: User) => {
+      alert("sukses registrasi!");
+      localStorage.setItem("data", JSON.stringify(data));
+      console.log(`data = ${JSON.stringify(data)}`);
+    });
+    form.resetForm();
   }
 }

@@ -1,7 +1,7 @@
 <div id = "login-card">
   <p id = "login-text">Login</p>
   <div class = "input-login">
-    <form [formGroup]="this.formGroup" (ngSubmit)="onSubmit()">
+    <form #forms = "ngForm" [formGroup]="this.formGroup" (ngSubmit)="onSubmit(forms)">
       <mat-form-field appearance="outline" [color]="this.emailColor" id = "input-email">
         <mat-label>Input your email</mat-label>
         <input matInput name="email" type="email" formControlName="email" placeholder="Example: aaaaaa@gmail.com">

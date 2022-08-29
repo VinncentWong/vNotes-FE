@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './login/card/card.component';
 import { LandingModule } from '../landing/landing.module';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     HttpClientModule,
     MatButtonModule,
+    FormsModule
   ],
   exports: [
     LoginComponent

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/data/user';
@@ -62,12 +62,15 @@ export class CardComponent implements OnInit {
     }
   }
 
-  onSubmit(): void{
-    console.log("login terpanggil");
-    this.httpClient.post<User>("http://localhost:8080/user/login", {
+  onSubmit(form: FormGroupDirective): void{
+    const callApi$ = this.httpClient.post<User>("http://localhost:8080/user/login", {
       email: this.formGroup.controls["email"].value,
       password: this.formGroup.controls["password"].value,
-    }).subscribe(() => alert("sukses login!"));
-    this.formGroup.reset;
+    });
+    callApi$.subscribe((data: User) => {
+      localStorage.setItem("data", JSON.stringify(data));
+      alert("user sukses login");
+    });
+    form.resetForm();
   }
 }

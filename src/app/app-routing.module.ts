@@ -12,7 +12,6 @@ const routes: Routes = [
   {path: "login", component: LoginComponent, title: "Login Page"},
   {path: "register", component: RegisterComponent, title: "Registration Page"},
   {path: "home", component: HomeComponent, title: "Home Page"},
-  {path: "home/login/oauth2/code/google", redirectTo: "/home"},
   {path: "**", component: NotfoundComponent, title: "404 Page Not Found"}
 ];
 

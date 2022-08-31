@@ -32,4 +32,14 @@
       </div>
     </div>
   </div>
+  <div *ngSwitchCase="'home'">
+    <div class="background-navbar">
+      <div id = "back">
+        <a routerLink="/">Home</a>
+      </div>
+      <div id = "register-text">
+        <p>{{this.userName}}</p>
+      </div>
+    </div>
+  </div>
 </div>

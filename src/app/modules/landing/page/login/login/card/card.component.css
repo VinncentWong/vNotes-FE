@@ -36,31 +36,6 @@
   top: 9em;
 }
 
-#google-icon{
-  position: absolute;
-  top: 18em;
-  width: 2em;
-  height: 2em;
-  background-color: white;
-}
-
-#login-w-google-anchor{
-  color: #202020;
-  font-style: italic;
-  font-size: 1.5em;
-  width: 10em;
-  position: absolute;
-  top: 12em;
-  left: 1.33em;
-  background-color: white;
-  height: 1.35em;
-}
-
-#container-google{
-  position: absolute;
-  background-color: white;
-}
-
 #button-submit{
   position: absolute;
   left: 37em;

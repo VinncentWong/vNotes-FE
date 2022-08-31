@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
   passwordColor: string = "accent";
   private httpClient: HttpClient;
 
-  constructor(private icon: MatIconRegistry, private domSanitizer: DomSanitizer, https: HttpClient) {
+  constructor(https: HttpClient) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -33,7 +33,6 @@ export class CardComponent implements OnInit {
       })
     });
     this.httpClient = https;
-    this.icon.addSvgIcon("google", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../../../../assets/google-svgrepo-com.svg"));
   }
 
   ngOnInit(): void {}

@@ -44,3 +44,29 @@
   left: 40em;
   color: white;
 }
+
+#google-icon{
+  position: absolute;
+  top: 28.5em;
+  left: 4em;
+  width: 2em;
+  height: 2em;
+  background-color: white;
+}
+
+#login-w-google-anchor{
+  color: #202020;
+  font-style: italic;
+  font-size: 1.5em;
+  width: 10em;
+  position: absolute;
+  top: 19em;
+  left: 4em;
+  background-color: white;
+  height: 1.35em;
+}
+
+#container-google{
+  position: absolute;
+  background-color: white;
+}

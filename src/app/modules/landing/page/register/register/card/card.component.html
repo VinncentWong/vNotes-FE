@@ -27,6 +27,12 @@
       </mat-error>
       <mat-hint>Hint: aaaaaaaa[min 8 characters]</mat-hint>
     </mat-form-field>
+    <div id = "container-google">
+      <mat-icon id = "google-icon" svgIcon="google"></mat-icon>
+      <a id = "login-w-google-anchor" href="http://localhost:8080/oauth2/authorization/google">
+        <p>Login with Google</p>
+      </a>
+    </div>
     <button id = "submit-button" mat-stroked-button [disabled]="submitDisabled()">
       Submit
     </button>

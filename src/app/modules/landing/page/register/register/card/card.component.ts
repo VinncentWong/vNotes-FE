@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { User } from 'src/app/data/user';
 
 @Component({
@@ -12,7 +14,7 @@ export class CardComponent implements OnInit {
 
   formGroup: FormGroup
 
-  constructor(private readonly http: HttpClient) {
+  constructor(private readonly http: HttpClient, private icon: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -30,6 +32,7 @@ export class CardComponent implements OnInit {
         ]
       })
     });
+    this.icon.addSvgIcon("google", this.domSanitizer.bypassSecurityTrustResourceUrl("../../../../../../../assets/google-svgrepo-com.svg"));
   }
 
   ngOnInit(): void {}

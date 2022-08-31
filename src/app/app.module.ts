@@ -7,12 +7,11 @@ import { LandingModule } from './modules/landing/page/landing/landing.module';
 import { LoginModule } from './modules/landing/page/login/login.module';
 import { RegisterModule } from './modules/landing/page/register/register.module';
 import { NotfoundModule } from './modules/landing/page/notfound/notfound.module';
-import { HomeComponent } from './modules/landing/page/home/home.component';
+import { HomeModule } from './modules/landing/page/home/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,8 @@ import { HomeComponent } from './modules/landing/page/home/home.component';
     LandingModule,
     LoginModule,
     RegisterModule,
-    NotfoundModule
+    NotfoundModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

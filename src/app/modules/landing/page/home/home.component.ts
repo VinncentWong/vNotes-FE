@@ -9,13 +9,13 @@ import { User } from 'src/app/data/user';
 })
 export class HomeComponent implements OnInit {
 
-  user?: User;
+  user: User;
 
   constructor(private httpClient: HttpClient) {
+    this.user = new User();
     const userStorage = JSON.parse(localStorage.getItem("data") ?? "");
-    console.log(localStorage.getItem("data"));
-    const id = userStorage["id"];
-    const jwtToken = userStorage["jwtToken"];
+    console.log("user storage = " + localStorage.getItem("data"));
+    this.user.username = userStorage.data.username;
   }
 
   ngOnInit(): void {}

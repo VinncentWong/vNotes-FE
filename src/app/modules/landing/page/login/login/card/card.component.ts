@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { User } from 'src/app/data/user';
 
 @Component({
@@ -15,9 +14,8 @@ export class CardComponent implements OnInit {
   formGroup: FormGroup;
   emailColor: string = "accent";
   passwordColor: string = "accent";
-  private httpClient: HttpClient;
 
-  constructor(https: HttpClient) {
+  constructor(private https: HttpClient, private route: Router) {
     this.formGroup = new FormGroup({
       email: new FormControl("", {
         validators: [
@@ -32,7 +30,6 @@ export class CardComponent implements OnInit {
         updateOn: "change"
       })
     });
-    this.httpClient = https;
   }
 
   ngOnInit(): void {}
@@ -62,7 +59,7 @@ export class CardComponent implements OnInit {
   }
 
   onSubmit(form: FormGroupDirective): void{
-    const callApi$ = this.httpClient.post<User>("http://localhost:8080/user/login", {
+    const callApi$ = this.https.post<User>("http://localhost:8080/user/login", {
       email: this.formGroup.controls["email"].value,
       password: this.formGroup.controls["password"].value,
     });
@@ -71,5 +68,6 @@ export class CardComponent implements OnInit {
       alert("user sukses login");
     });
     form.resetForm();
+    this.route.navigate(["/home"]);
   }
 }

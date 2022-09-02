@@ -13,16 +13,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) {
     const userStorage = JSON.parse(localStorage.getItem("user") ?? "");
+    console.log(localStorage.getItem("user"));
     const id = userStorage["id"];
     const jwtToken = userStorage["jwtToken"];
-    const apiCall$ = httpClient.get<User>(`http://localhost:8080/getuser/${id}`, {
-      headers: {
-        "Authorization": "Bearer " + jwtToken
-      }
-    });
-    apiCall$.subscribe((data: User) => {
-      this.user = data;
-    });
   }
 
   ngOnInit(): void {}

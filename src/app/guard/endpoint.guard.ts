@@ -9,12 +9,12 @@ export class EndpointGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const user = JSON.parse(localStorage.getItem("user") ?? "");
-    if(user["jwtToken"] === null){
+    console.log("endpoint guard terpanggil");
+    const user = JSON.parse(localStorage.getItem("data") ?? "");
+    if(user["tokenJwt"] === null){
       return false;
     } else {
       return true;
     }
   }
-
 }

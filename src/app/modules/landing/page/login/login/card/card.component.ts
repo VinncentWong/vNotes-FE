@@ -67,6 +67,7 @@ export class CardComponent implements OnInit {
       localStorage.setItem("data", JSON.stringify(data));
       alert("user sukses login");
     });
+    console.log("data = " + localStorage.getItem("data"));
     form.resetForm();
     this.route.navigate(["/home"]);
   }
